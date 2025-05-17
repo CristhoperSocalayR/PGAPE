@@ -486,6 +486,7 @@ const Home = () => {
                   src="https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg"
                   alt="MetaMask"
                   className="wallet-logo"
+                   onClick={goToLogin}
                 />
                 Conectar Wallet
               </button>
