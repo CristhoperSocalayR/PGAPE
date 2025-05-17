@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Home.css';
+
 // Componente de Tarjeta Animada
 const AnimatedCard = ({ children, delay = 0 }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -42,8 +44,14 @@ const Counter = ({ target, duration = 2000 }) => {
   return <span className="counter">{count}+</span>;
 };
 
-const Home = ({ connectWallet, setCurrentPage }) => {
+const Home = () => {
   const [activeFeature, setActiveFeature] = useState(0);
+  const navigate = useNavigate(); // Hook para la navegación
+
+  // Función para navegar a la página de login
+  const goToLogin = () => {
+    navigate('/login');
+  };
 
   // Datos del equipo mejorados
   const teamMembers = [
@@ -184,7 +192,10 @@ const Home = ({ connectWallet, setCurrentPage }) => {
 
               <AnimatedCard delay={600}>
                 <div className="hero-buttons">
-                  <button className="connect-button glow-on-hover" onClick={connectWallet}>
+                  <button 
+                    className="connect-button glow-on-hover" 
+                    onClick={goToLogin}
+                  >
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg"
                       alt="MetaMask"
@@ -194,7 +205,6 @@ const Home = ({ connectWallet, setCurrentPage }) => {
                   </button>
                   <button
                     className="secondary-button"
-                    onClick={() => setCurrentPage('dashboard')}
                   >
                     <span className="button-icon">▶️</span>
                     Demo Interactiva
@@ -310,7 +320,7 @@ const Home = ({ connectWallet, setCurrentPage }) => {
                   <p>{features[activeFeature].description}</p>
                   <div className="feature-actions">
                     <button className="learn-more-btn">Más información</button>
-                    <button className="demo-btn" onClick={() => setCurrentPage('dashboard')}>
+                    <button className="demo-btn">
                       <span className="button-icon">▶️</span>
                       Ver demo
                     </button>
@@ -471,7 +481,7 @@ const Home = ({ connectWallet, setCurrentPage }) => {
             <p>Comienza hoy mismo a disfrutar de pagos globales instantáneos y sin fronteras</p>
 
             <div className="cta-buttons">
-              <button className="connect-button large glow-on-hover" onClick={connectWallet}>
+              <button className="connect-button large glow-on-hover">
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg"
                   alt="MetaMask"
