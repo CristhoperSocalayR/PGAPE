@@ -1,0 +1,306 @@
+/* Dashboard.css */
+
+/* Main container styles */
+.dashboard-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Common card styles */
+.balance-card,
+.wallet-card,
+.actions-card,
+.network-info-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+/* Balance card styles */
+.balance-card {
+  background-color: #0a2547;
+  background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='smallGrid' width='20' height='20' patternUnits='userSpaceOnUse'%3E%3Cpath d='M 20 0 L 0 0 0 20' fill='none' stroke='rgba(255, 255, 255, 0.05)' stroke-width='0.5'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23smallGrid)'/%3E%3C/svg%3E");
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.balance-amount {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.network-label {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  display: inline-block;
+  padding: 8px 15px;
+  font-size: 14px;
+}
+
+/* Wallet card styles */
+.wallet-card {
+  padding: 20px;
+}
+
+.card-title {
+  color: #333;
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.wallet-address-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.wallet-address {
+  font-family: monospace;
+  font-size: 14px;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.copy-button {
+  background-color: #f8d033;
+  border: none;
+  border-radius: 8px;
+  color: #333;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px 20px;
+}
+
+.copy-button:hover {
+  background-color: #f0c41b;
+}
+
+/* Actions card styles */
+.actions-card {
+  padding: 20px;
+}
+
+.actions-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.action-button {
+  flex: 1;
+  text-align: center;
+  padding: 15px 5px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.action-button:hover {
+  background-color: #f5f5f5;
+}
+
+.action-icon-container {
+  background-color: #0a2547;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px;
+}
+
+.action-icon {
+  color: white;
+}
+
+/* Network info card styles */
+.network-info-card {
+  padding: 20px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.info-label {
+  color: #666;
+}
+
+.info-value {
+  font-weight: 500;
+  text-align: right;
+}
+
+.info-divider {
+  height: 1px;
+  background-color: #eee;
+}
+
+/* Update button styles */
+.update-button {
+  background-color: #0a2547;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 15px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.update-button:hover {
+  background-color: #0d3266;
+}
+
+/* Estilos para el selector de redes y dropdown */
+.network-dropdown-container {
+  position: relative;
+}
+
+.wallet-selector {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  width: 140px;
+  margin-right: 10px;
+  transition: background-color 0.2s;
+}
+
+.wallet-selector:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.dropdown-arrow {
+  margin-left: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.network-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 8px;
+  background-color: #1a1a2e;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  width: 180px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 100;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+.mobile-network-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 8px;
+  background-color: #1a1a2e;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  width: 180px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+.network-option {
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.network-option:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.network-option.selected {
+  background-color: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+}
+
+/* Estilos para la notificación */
+.notification-banner {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background-color: rgba(28, 188, 139, 0.9);
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  animation: fadeIn 0.3s, fadeOut 0.5s 2.5s forwards;
+  text-align: center;
+  font-weight: 500;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, -20px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: translate(-50%, 0); }
+  to { opacity: 0; transform: translate(-50%, -20px); }
+}
+
+/* Estilos para el botón de actualizar en Dashboard */
+.update-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.refresh-icon {
+  transition: transform 0.2s;
+}
+
+.refresh-icon.spinning {
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Estilos para enlaces en la información de red */
+.explorer-link {
+  color: #60a5fa;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.explorer-link:hover {
+  color: #93c5fd;
+  text-decoration: underline;
+}
